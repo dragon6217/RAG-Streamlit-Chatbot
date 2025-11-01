@@ -3,7 +3,7 @@
 이 저장소에는 두 개의 주요 스크립트가 있습니다.
 
 ### 1. `app.py`: API 연결 검증
-* **목적:** Upstage API (`ChatUpstage`)가 `.env` 파일의 API 키로 정상 작동하는지 확인하는 간단한 테스트 스크립트입니다. (프로젝트의 `c1` 커밋에 해당)
+* **목적:** Upstage API (`ChatUpstage`)가 `.env` 파일의 API 키로 정상 작동하는지 확인하는 간단한 테스트 스크립트입니다.
 * **실행:** `python app.py`
 
 ### 2. `app2.py`: CLI 기반 RAG 파이프라인 (메인)
@@ -20,12 +20,16 @@
     cd RAG-Streamlit-Chatbot
     ```
 
-2.  (권장) `pyenv` 가상환경을 생성 및 활성화합니다.
-    *(이 프로젝트는 Python 3.10.19 버전을 기준으로 합니다.)*
+2. (권장) `pyenv` 가상환경 생성
+    이 프로젝트는 `.python-version` 파일을 통해 `pyenv`가 특정 가상환경을 자동으로 활성화하도록 설정되어 있습니다.
+
+    방문자는 `pyenv`를 사용하여 `RAG-Streamlit-Chatbot`이라는 이름으로 Python 3.10.x 버전의 가상환경을 **먼저 생성해야 합니다**:
+
     ```bash
-    # pyenv를 사용한다면 .python-version 파일이 자동으로 인식됩니다.
-    python3 -m venv .venv
-    source .venv/bin/activate
+    # (예시) pyenv로 Python 3.10.19 설치
+    pyenv install 3.10.19
+    # 'RAG-Streamlit-Chatbot' 이름으로 가상환경 생성
+    pyenv virtualenv 3.10.19 RAG-Streamlit-Chatbot
     ```
 
 3.  필요한 라이브러리를 설치합니다.
@@ -39,9 +43,9 @@
     UPSTAGE_API_KEY="sk-..."
     ```
 
-5.  **(필수) 샘플 문서 준비**
-    * `tax.docx` (소득세법) 파일을 이 폴더에 다운로드하여 위치시킵니다.
-    * (참고: 이 파일은 저작권 문제로 레포지토리에 포함하지 않았습니다.)
+5. 샘플 문서 확인
+    이 레포지토리에는 RAG 테스트를 위한 샘플 문서인 `tax.docx` (소득세법) 파일이 포함되어 있습니다. 
+    `app2.py`는 이 파일을 직접 로드하여 실행됩니다.
 
 6.  메인 스크립트를 실행합니다.
     ```bash
