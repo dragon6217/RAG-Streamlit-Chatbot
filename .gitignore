@@ -212,3 +212,5 @@ __marimo__/
 # Vector Database (Generated Data)
 chroma/
 
+#old versions
+.old/
