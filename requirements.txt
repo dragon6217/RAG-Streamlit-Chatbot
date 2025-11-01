@@ -1,2 +1,19 @@
-langchain-upstage 
+# .env 파일 로드
 python-dotenv
+
+# LangChain 핵심 패키지
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchainhub
+langchain_classic
+
+# Upstage (LLM & Embedding)
+langchain-upstage
+
+# VectorDB
+langchain-chroma
+
+# 문서 로더
+docx2txt
